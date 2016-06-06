@@ -25,7 +25,7 @@ define bundle::install (
   }
 
   exec { "${cwd}% bundle install":
-    command     => "${::bundler::command} install ${deployment_arg} ${with_arg} ${without_arg}"
+    command     => "${::bundler::command} install ${deployment_arg} ${with_arg} ${without_arg}",
     cwd         => $cwd,
     refreshonly => true,
   }
