@@ -12,16 +12,16 @@ define bundle::install (
     $deployment_arg = ''
   }
 
-  if $with.any? {
-    $with_arg = '--with ' + $with.join(' ')
-  } else {
+  if empty($with) {
     $with_arg = ''
+  } else {
+    $with_arg = '--with ' + $with.join(' ')
   }
 
-  if $without.any? {
-    $without_arg = '--without ' + $without.join(' ')
-  } else {
+  if empty($without) {
     $without_arg = ''
+  } else {
+    $without_arg = '--without ' + $without.join(' ')
   }
 
   exec { "${cwd}% bundle install":
