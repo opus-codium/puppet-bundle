@@ -10,7 +10,7 @@ define bundle::exec (
   include ::bundle
 
   exec { $name:
-    command     => "${::bundler::command} exec ${command}",
+    command     => "${::bundle::command} exec ${command}",
     cwd         => $cwd,
     environment => $environment,
     group       => $group,

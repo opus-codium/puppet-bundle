@@ -1,6 +1,6 @@
 class bundle (
-  $package = $::bundler::package,
-  $command = $::bundler::command,
+  $package = $::bundle::package,
+  $command = $::bundle::command,
 ) inherits bundle::params {
   package { $package:
     ensure => installed,
