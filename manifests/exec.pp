@@ -6,6 +6,7 @@ define bundle::exec (
   $timeout = 300,
   $user = 'root',
   $environment = [],
+  $refreshonly = false,
 ) {
   include ::bundle
 
@@ -14,6 +15,7 @@ define bundle::exec (
     cwd         => $cwd,
     environment => $environment,
     group       => $group,
+    refreshonly => $refreshonly,
     timeout     => $timeout,
     user        => $user,
   }
