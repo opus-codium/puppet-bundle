@@ -1,5 +1,6 @@
 define bundle::install (
   $deployment = true,
+  $user = 'root',
   $with = [],
   $without = [],
 ) {
@@ -27,5 +28,6 @@ define bundle::install (
     command     => "${::bundler::command} install ${deployment_arg} ${with_arg} ${without_arg}",
     cwd         => $name,
     refreshonly => true,
+    user        => $user,
   }
 }
