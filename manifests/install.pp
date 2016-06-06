@@ -15,13 +15,13 @@ define bundle::install (
   if empty($with) {
     $with_arg = ''
   } else {
-    $with_arg = join('--with', join($with, ' '), ' ')
+    $with_arg = join(['--with', join($with, ' ')], ' ')
   }
 
   if empty($without) {
     $without_arg = ''
   } else {
-    $without_arg = join('--without', join($without, ' '), ' ')
+    $without_arg = join(['--without', join($without, ' ')], ' ')
   }
 
   exec { "${name}% bundle install":
