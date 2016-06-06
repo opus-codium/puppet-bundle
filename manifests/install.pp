@@ -1,5 +1,4 @@
 define bundle::install (
-  $cwd,
   $deployment = true,
   $with = [],
   $without = [],
@@ -24,9 +23,9 @@ define bundle::install (
     $without_arg = '--without ' + join($without, ' ')
   }
 
-  exec { "${cwd}% bundle install":
+  exec { "${name}% bundle install":
     command     => "${::bundler::command} install ${deployment_arg} ${with_arg} ${without_arg}",
-    cwd         => $cwd,
+    cwd         => $name,
     refreshonly => true,
   }
 }
