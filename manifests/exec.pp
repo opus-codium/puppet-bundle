@@ -5,7 +5,7 @@ define bundle::exec (
   $refreshonly = false,
   $timeout = 300,
   $user = 'root',
-  $environment => [],
+  $environment = [],
 ) {
   include ::bundle
 
