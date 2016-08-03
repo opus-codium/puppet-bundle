@@ -10,7 +10,7 @@ define bundle::exec (
 ) {
   require ::bundle
 
-  exec { $name:
+  exec { "${user}@${::hostname} ${::bundle::command} exec ${command}":
     command     => "${::bundle::command} exec ${command}",
     cwd         => $cwd,
     environment => $environment,

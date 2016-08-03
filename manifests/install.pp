@@ -25,7 +25,7 @@ define bundle::install (
     $without_arg = join(['--without', join($without, ' ')], ' ')
   }
 
-  exec { "${name}% bundle install":
+  exec { "${user}@${::hostname} ${name}% ${::bundle::command} install":
     command     => "${::bundle::command} install ${deployment_arg} ${with_arg} ${without_arg}",
     cwd         => $name,
     refreshonly => true,
