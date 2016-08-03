@@ -4,7 +4,7 @@ define bundle::install (
   $with = [],
   $without = [],
 ) {
-  include ::bundle
+  require ::bundle
 
   if $deployment {
     $deployment_arg = '--deployment'

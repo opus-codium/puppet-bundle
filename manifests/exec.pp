@@ -8,7 +8,7 @@ define bundle::exec (
   $environment = [],
   $refreshonly = false,
 ) {
-  include ::bundle
+  require ::bundle
 
   exec { $name:
     command     => "${::bundle::command} exec ${command}",

@@ -5,4 +5,7 @@ class bundle (
   package { $package:
     ensure => installed,
   }
+
+  Package <| |> -> Bundle::Install <| |>
+  Package <| |> -> Bundle::Exec <| |>
 }
