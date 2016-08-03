@@ -3,6 +3,7 @@ define bundle::install (
   $user = 'root',
   $with = [],
   $without = [],
+  $timeout = 300,
 ) {
   require ::bundle
 
@@ -29,5 +30,6 @@ define bundle::install (
     cwd         => $name,
     refreshonly => true,
     user        => $user,
+    timeout     => $timeout,
   }
 }
