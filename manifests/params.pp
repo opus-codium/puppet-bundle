@@ -1,10 +1,10 @@
 class bundle::params {
   case $::osfamily {
-    'FreeBSD': {
+    'freeBSD': {
       $package = 'rubygem-bundler'
       $command = '/usr/local/bin/bundle'
     }
-    'Debian': {
+    'debian': {
       if $::operatingsystemmajrelease <= '8' {
         $package = 'bundler'
       } else {
