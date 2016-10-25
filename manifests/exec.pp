@@ -6,7 +6,6 @@ define bundle::exec (
   $timeout = 300,
   $user = 'root',
   $environment = [],
-  $refreshonly = false,
 ) {
   require ::bundle
 
