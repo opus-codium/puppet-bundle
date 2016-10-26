@@ -5,7 +5,7 @@ class bundle::params {
       $command = '/usr/local/bin/bundle'
     }
     'debian': {
-      if $::operatingsystemmajrelease <= '8' {
+      if versioncmp($::operatingsystemrelease, '8.0') < 0 {
         $package = 'bundler'
       } else {
         $package = 'ruby-bundler'
