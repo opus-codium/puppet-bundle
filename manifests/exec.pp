@@ -12,13 +12,13 @@ define bundle::exec (
   if $cwd {
     $real_cwd = $cwd
   } else {
-    $real_cwd = $title.match(/^([^:]+):/)[1]
+    $real_cwd = inline_template('<%= @title.split(":", 2)[0] %>')
   }
 
   if $command {
     $real_command = $command
   } else {
-    $real_command = $title.match(/^[^:]+:(.*)$/)[1]
+    $real_command = inline_template('<%= @title.split(":", 2)[1] %>')
   }
 
   exec { "${user}@${::hostname} ${real_cwd}% ${::bundle::command} exec ${real_command}":
