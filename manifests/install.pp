@@ -1,5 +1,6 @@
 define bundle::install (
   $deployment = true,
+  $path = undef,
   $user = 'root',
   $with = [],
   $without = [],
@@ -11,6 +12,12 @@ define bundle::install (
     $deployment_arg = '--deployment'
   } else {
     $deployment_arg = ''
+  }
+
+  if $path {
+    $path_arg = "--path ${path}"
+  } else {
+    $path_arg = ''
   }
 
   if empty($with) {
@@ -26,7 +33,7 @@ define bundle::install (
   }
 
   exec { "${user}@${::hostname} ${name}% ${::bundle::command} install":
-    command     => "${::bundle::command} install ${deployment_arg} ${with_arg} ${without_arg}",
+    command     => reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$').join(' '),
     cwd         => $name,
     refreshonly => true,
     user        => $user,
