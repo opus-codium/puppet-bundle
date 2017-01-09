@@ -7,12 +7,14 @@ describe 'bundle::install' do
 
   let(:params) do
     {
+      environment: custom_environment,
       path: path,
       user: 'deploy',
       with: with,
       without: without
     }
   end
+  let(:custom_environment) { [] }
   let(:path) { :undef }
   let(:with) { 'single' }
   let(:without) { %w(one two three) }
@@ -21,8 +23,19 @@ describe 'bundle::install' do
   it do
     is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install').with(
       command: '/usr/bin/bundle install --deployment --with single --without one two three',
+      environment: [],
       user: 'deploy'
     )
+  end
+
+  context 'custom environment' do
+    let(:custom_environment) { ['BUNDLER_GEMFILE=Gemfile.aarch64'] }
+
+    it do
+      is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install').with(
+        environment: ['BUNDLER_GEMFILE=Gemfile.aarch64'],
+      )
+    end
   end
 
   context 'custom path' do

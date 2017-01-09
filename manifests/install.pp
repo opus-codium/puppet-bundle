@@ -1,5 +1,6 @@
 define bundle::install (
   $deployment = true,
+  $environment = [],
   $path = undef,
   $user = 'root',
   $with = [],
@@ -7,6 +8,8 @@ define bundle::install (
   $timeout = 300,
 ) {
   require ::bundle
+
+  validate_array($environment)
 
   if $deployment {
     $deployment_arg = '--deployment'
@@ -35,6 +38,7 @@ define bundle::install (
   exec { "${user}@${::hostname} ${name}% ${::bundle::command} install":
     command     => join(reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$'), ' '),
     cwd         => $name,
+    environment => $environment,
     refreshonly => true,
     user        => $user,
     timeout     => $timeout,
