@@ -33,7 +33,7 @@ define bundle::install (
   }
 
   exec { "${user}@${::hostname} ${name}% ${::bundle::command} install":
-    command     => reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$').join(' '),
+    command     => join(reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$'), ' '),
     cwd         => $name,
     refreshonly => true,
     user        => $user,
