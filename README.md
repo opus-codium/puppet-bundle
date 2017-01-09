@@ -134,6 +134,14 @@ Default: 'root'
 
 Default: 'true'
 
+##### `environment`
+
+Default: '[]'
+
+##### `path`
+
+Default: 'undef'
+
 ##### `timeout`
 
 Default: '300'
