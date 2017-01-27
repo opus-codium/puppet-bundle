@@ -68,23 +68,26 @@ Exec['notify-app']
 
 ## Usage
 
-Only the `bundle::install` and `bundle::exec` classes are intended to end users
+Only the `bundle`, `bundle::install` and `bundle::exec` classes are intended to end users
 usage. See reference documentation bellow.
 
 ## Reference
 
-* [Private classes](#private-classes)
+* [Public classes](#private-classes)
     * [`bundle`](#class-bundle)
+* [Private classes](#private-classes)
     * [`bundle::params`](#class-bundleparams)
 * [Defined Types](#defined-types)
     * [`bundle::exec`](#defined-type-bundleexec)
     * [`bundle::install`](#defined-type-bundleinstall)
 
-### Private Classes
+### Public Classes
 
 #### Class: `bundle`
 
-Install bundler.
+Ensure bundler is installed.
+
+### Private Classes
 
 #### Class: `bundle::params`
 
