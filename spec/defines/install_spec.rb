@@ -21,7 +21,7 @@ describe 'bundle::install' do
 
   it { is_expected.to compile }
   it do
-    is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install').with(
+    is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install --deployment --with single --without one two three').with(
       command: '/usr/bin/bundle install --deployment --with single --without one two three',
       environment: [],
       user: 'deploy'
@@ -32,7 +32,7 @@ describe 'bundle::install' do
     let(:custom_environment) { ['BUNDLER_GEMFILE=Gemfile.aarch64'] }
 
     it do
-      is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install').with(
+      is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install --deployment --with single --without one two three').with(
         environment: ['BUNDLER_GEMFILE=Gemfile.aarch64'],
       )
     end
@@ -42,7 +42,7 @@ describe 'bundle::install' do
     let(:path) { 'vendor/bundle' }
 
     it do
-      is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install').with(
+      is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install --deployment --path vendor/bundle --with single --without one two three').with(
         command: '/usr/bin/bundle install --deployment --path vendor/bundle --with single --without one two three',
         user: 'deploy'
       )
