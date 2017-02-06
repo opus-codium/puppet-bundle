@@ -35,12 +35,14 @@ define bundle::install (
     $without_arg = join(['--without', join(any2array($without), ' ')], ' ')
   }
 
-  exec { "${user}@${::hostname} ${name}% ${::bundle::command} install":
-    command     => join(reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$'), ' '),
+  $command = join(reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$'), ' ')
+
+  exec { "${user}@${::hostname} ${name}% ${command}":
+    command     => $command,
     cwd         => $name,
     environment => $environment,
-    refreshonly => true,
-    user        => $user,
     timeout     => $timeout,
+    unless      => "${::bundle::command} check",
+    user        => $user,
   }
 }
