@@ -1,6 +1,7 @@
 define bundle::install (
   $deployment = true,
   $environment = [],
+  $group = 'root',
   $path = undef,
   $user = 'root',
   $with = [],
@@ -44,5 +45,6 @@ define bundle::install (
     timeout     => $timeout,
     unless      => "${::bundle::command} check",
     user        => $user,
+    group       => $group,
   }
 }
