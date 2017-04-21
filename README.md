@@ -52,6 +52,7 @@ bundle::install { $app_directory:
 bundle::exec { "${app_directory}:rake db:migrate":
   user        => 'app',
   group       => 'app',
+  environment => ['RAILS_ENV=production'],
   refreshonly => true,
 }
 
