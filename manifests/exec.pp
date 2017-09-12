@@ -1,11 +1,11 @@
 define bundle::exec (
-  $command = undef,
-  $cwd = undef,
-  $group = 'root',
-  $refreshonly = false,
-  $timeout = 300,
-  $user = 'root',
-  $environment = [],
+  Optional[String] $command = undef,
+  Optional[String] $cwd = undef,
+  String $group = 'root',
+  Boolean $refreshonly = false,
+  Integer $timeout = 300,
+  String $user = 'root',
+  Array[String] $environment = [],
 ) {
   require ::bundle
 

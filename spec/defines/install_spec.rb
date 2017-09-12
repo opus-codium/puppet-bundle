@@ -16,7 +16,7 @@ describe 'bundle::install' do
   end
   let(:custom_environment) { [] }
   let(:path) { :undef }
-  let(:with) { 'single' }
+  let(:with) { %w(single) }
   let(:without) { %w(one two three) }
 
   it { is_expected.to compile }
