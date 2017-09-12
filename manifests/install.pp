@@ -1,16 +1,14 @@
 define bundle::install (
-  $deployment = true,
-  $environment = [],
-  $group = 'root',
-  $path = undef,
-  $user = 'root',
-  $with = [],
-  $without = [],
-  $timeout = 300,
+  Boolean $deployment = true,
+  Array[String] $environment = [],
+  String $group = 'root',
+  Optional[String] $path = undef,
+  String $user = 'root',
+  Array[String] $with = [],
+  Array[String] $without = [],
+  Integer $timeout = 300,
 ) {
   require ::bundle
-
-  validate_array($environment)
 
   if $deployment {
     $deployment_arg = '--deployment'
