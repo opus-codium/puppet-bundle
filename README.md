@@ -41,7 +41,6 @@ vcsrepo { $app_directory:
   provider => 'git',
   source   => 'git@example.com/repo.git',
   user     => 'deploy',
-  group    => 'deploy',
 }
 
 bundle::install { $app_directory:
