@@ -9,7 +9,7 @@ describe 'bundle::exec' do
     {
       command: command,
       cwd: cwd,
-      user: 'deploy'
+      user: 'deploy',
     }
   end
   let(:command) { :undef }
@@ -21,7 +21,7 @@ describe 'bundle::exec' do
     is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle exec rake assets:precompile').with(
       command: '/usr/bin/bundle exec rake assets:precompile',
       cwd: '/path/to/bundle',
-      user: 'deploy'
+      user: 'deploy',
     )
   end
 
@@ -33,7 +33,7 @@ describe 'bundle::exec' do
       is_expected.to contain_exec('deploy@hostname /path/to/another/location% /usr/bin/bundle exec rspec').with(
         command: '/usr/bin/bundle exec rspec',
         cwd: '/path/to/another/location',
-        user: 'deploy'
+        user: 'deploy',
       )
     end
   end

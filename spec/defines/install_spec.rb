@@ -11,20 +11,20 @@ describe 'bundle::install' do
       path: path,
       user: 'deploy',
       with: with,
-      without: without
+      without: without,
     }
   end
   let(:custom_environment) { [] }
   let(:path) { :undef }
-  let(:with) { %w(single) }
-  let(:without) { %w(one two three) }
+  let(:with) { %w[single] }
+  let(:without) { %w[one two three] }
 
   it { is_expected.to compile }
   it do
     is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install --deployment --with single --without one two three').with(
       command: '/usr/bin/bundle install --deployment --with single --without one two three',
       environment: [],
-      user: 'deploy'
+      user: 'deploy',
     )
   end
 
@@ -44,7 +44,7 @@ describe 'bundle::install' do
     it do
       is_expected.to contain_exec('deploy@hostname /path/to/bundle% /usr/bin/bundle install --deployment --path vendor/bundle --with single --without one two three').with(
         command: '/usr/bin/bundle install --deployment --path vendor/bundle --with single --without one two three',
-        user: 'deploy'
+        user: 'deploy',
       )
     end
   end
