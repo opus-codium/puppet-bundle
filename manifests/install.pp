@@ -1,3 +1,13 @@
+# @summary Install a bundle
+#
+# @param deployment Install the bundle in deployment mode
+# @param environment Environment to bundle the application with with
+# @param group Group to bundle the application with
+# @param path Custom path to bundle the application
+# @param user User to bundle the application with
+# @param with Pass --with when bundling the application
+# @param without Pass --without when bundling the application
+# @param timeout Timeout for bundling the application
 define bundle::install (
   Boolean $deployment = true,
   Array[String] $environment = [],
