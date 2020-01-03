@@ -1,0 +1,3 @@
+---
+bundle::package: "ruby-bundler"
+bundle::command: "/usr/bin/bundle"

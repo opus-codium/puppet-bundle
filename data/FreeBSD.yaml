@@ -1,0 +1,3 @@
+---
+bundle::package: "rubygem-bundler"
+bundle::command: "/usr/local/bin/bundle"

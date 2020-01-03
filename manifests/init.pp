@@ -1,7 +1,7 @@
 class bundle (
-  String $package = $::bundle::params::package,
-  String $command = $::bundle::params::command,
-) inherits bundle::params {
+  String $package,
+  String $command,
+) {
   ensure_packages($package, { ensure => installed })
 
   Package <| |> -> Bundle::Install <| |>
