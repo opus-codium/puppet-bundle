@@ -7,10 +7,10 @@ defaults:
 
 hierarchy:
   - name: "family/major"
-    path: "os/%{facts.os.family}/%{facts.os.release.major}.yaml"
+    path: "%{facts.os.family}/%{facts.os.release.major}.yaml"
 
   - name: "family"
-    path: "os/%{facts.osfamily}.yaml"
+    path: "%{facts.osfamily}.yaml"
 
   - name: "common"
     path: "common.yaml"
