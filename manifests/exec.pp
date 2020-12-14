@@ -16,7 +16,7 @@ define bundle::exec (
   String $user = 'root',
   Array[String] $environment = [],
 ) {
-  require ::bundle
+  include bundle
 
   if $cwd {
     $real_cwd = $cwd
@@ -30,8 +30,8 @@ define bundle::exec (
     $real_command = inline_template('<%= @title.split(":", 2)[1] %>')
   }
 
-  exec { "${user}@${::hostname} ${real_cwd}% ${::bundle::command} exec ${real_command}":
-    command     => "${::bundle::command} exec ${real_command}",
+  exec { "${user}@${facts.get('networking.hostname')} ${real_cwd}% ${bundle::command} exec ${real_command}":
+    command     => "${bundle::command} exec ${real_command}",
     cwd         => $real_cwd,
     environment => $environment,
     group       => $group,

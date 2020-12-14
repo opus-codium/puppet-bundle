@@ -18,7 +18,7 @@ define bundle::install (
   Array[String] $without = [],
   Integer $timeout = 300,
 ) {
-  require ::bundle
+  include bundle
 
   if $deployment {
     $deployment_arg = '--deployment'
@@ -44,14 +44,14 @@ define bundle::install (
     $without_arg = join(['--without', join(any2array($without), ' ')], ' ')
   }
 
-  $command = join(reject([$::bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$'), ' ')
+  $command = join(reject([$bundle::command, 'install', $deployment_arg, $path_arg, $with_arg, $without_arg], '^$'), ' ')
 
-  exec { "${user}@${::hostname} ${name}% ${command}":
+  exec { "${user}@${facts.get('networking.hostname')} ${name}% ${command}":
     command     => $command,
     cwd         => $name,
     environment => $environment,
     timeout     => $timeout,
-    unless      => "${::bundle::command} check",
+    unless      => "${bundle::command} check",
     user        => $user,
     group       => $group,
   }
