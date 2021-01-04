@@ -4,14 +4,19 @@
 
 #### Table of Contents
 
-1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with bundle](#setup)
-    * [What bundle affects](#what-bundle-affects)
-    * [Beginning with bundle](#beginning-with-bundle)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
+<!-- vim-markdown-toc GFM -->
+
+* [Overview](#overview)
+* [Module Description](#module-description)
+* [Setup](#setup)
+  * [What bundle affects](#what-bundle-affects)
+  * [Beginning with bundle](#beginning-with-bundle)
+* [Usage](#usage)
+* [Reference](#reference)
+* [Limitations](#limitations)
+* [Contributing](#contributing)
+
+<!-- vim-markdown-toc -->
 
 ## Overview
 
@@ -80,86 +85,6 @@ usage. See reference documentation bellow.
 * [Defined Types](#defined-types)
     * [`bundle::exec`](#defined-type-bundleexec)
     * [`bundle::install`](#defined-type-bundleinstall)
-
-### Public Classes
-
-#### Class: `bundle`
-
-Ensure bundler is installed.
-
-### Private Classes
-
-#### Class: `bundle::params`
-
-Module parameters.
-
-### Defined Types
-
-#### Defined Type: `bundle::exec`
-
-##### `command`
-
-The command to execute within the bundle.  If not set, inferred from the resource's `$title` (everything after the first colon).
-
-Default: undef
-
-##### `cwd`
-
-The directory fron which to run the bundle command.  If not set, inferred from the resource's `$title` (everything before the first colon).
-
-Default: undef
-
-##### `environment`
-
-Environment variables to pass the bundle command.
-
-Default: '[]'
-
-##### `group`
-
-Default: 'root'
-
-##### `refreshonly`
-
-Default: false
-
-##### `timeout`
-
-Default: '300'
-
-##### `user`
-
-Default: 'root'
-
-#### Defined Type: `bundle::install`
-
-##### `deployment`
-
-Default: 'true'
-
-##### `environment`
-
-Default: '[]'
-
-##### `path`
-
-Default: 'undef'
-
-##### `timeout`
-
-Default: '300'
-
-##### `user`
-
-Default: 'root'
-
-##### `with`
-
-Default: '[]'
-
-##### `without`
-
-Default: '[]'
 
 ## Limitations
 
