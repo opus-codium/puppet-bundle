@@ -9,7 +9,6 @@
   "issues_url": "https://github.com/opus-codium/puppet-bundle/issues",
   "dependencies": [
   ],
-  "data_provider": "hiera",
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
