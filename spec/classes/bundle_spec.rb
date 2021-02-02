@@ -1,7 +1,11 @@
 require 'spec_helper'
 
 describe 'bundle' do
-  include_context 'facts'
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) { facts }
 
-  it { is_expected.to compile }
+      it { is_expected.to compile }
+    end
+  end
 end
