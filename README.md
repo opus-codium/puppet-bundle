@@ -1,6 +1,13 @@
 # bundle
 
-[![Build Status](https://travis-ci.com/opus-codium/puppet-bundle.svg?branch=master)](https://travis-ci.com/opus-codium/puppet-bundle)
+<!-- header GFM -->
+[![Build Status](https://img.shields.io/github/workflow/status/opus-codium/puppet-bundle/Release)](https://github.com/opus-codium/puppet-bundle/releases)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
+[![License](https://img.shields.io/github/license/opus-codium/puppet-bundle.svg)](https://github.com/voxpupuli/opuscodium-bundle/blob/master/LICENSE.md)
+<!-- header -->
 
 #### Table of Contents
 
