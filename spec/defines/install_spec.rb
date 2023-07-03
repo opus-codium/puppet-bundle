@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 describe 'bundle::install' do
+  # rubocop:disable RSpec/MultipleMemoizedHelpers
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let(:facts) { facts }
@@ -58,4 +59,5 @@ describe 'bundle::install' do
       end
     end
   end
+  # rubocop:enable RSpec/MultipleMemoizedHelpers
 end
