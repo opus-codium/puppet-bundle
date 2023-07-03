@@ -10,26 +10,29 @@
 
 ### Defined types
 
-* [`bundle::exec`](#bundleexec): Run a command in a bundle
-* [`bundle::install`](#bundleinstall): Install a bundle
+* [`bundle::exec`](#bundle--exec): Run a command in a bundle
+* [`bundle::install`](#bundle--install): Install a bundle
 
 ## Classes
 
-### `bundle`
+### <a name="bundle"></a>`bundle`
 
 Common code for bundler
 
 #### Parameters
 
-The following parameters are available in the `bundle` class.
+The following parameters are available in the `bundle` class:
 
-##### `package`
+* [`package`](#-bundle--package)
+* [`command`](#-bundle--command)
+
+##### <a name="-bundle--package"></a>`package`
 
 Data type: `String`
 
 Name of the bundler package
 
-##### `command`
+##### <a name="-bundle--command"></a>`command`
 
 Data type: `String`
 
@@ -37,31 +40,39 @@ Path to the bundler command
 
 ## Defined types
 
-### `bundle::exec`
+### <a name="bundle--exec"></a>`bundle::exec`
 
 Run a command in a bundle
 
 #### Parameters
 
-The following parameters are available in the `bundle::exec` defined type.
+The following parameters are available in the `bundle::exec` defined type:
 
-##### `command`
+* [`command`](#-bundle--exec--command)
+* [`cwd`](#-bundle--exec--cwd)
+* [`group`](#-bundle--exec--group)
+* [`refreshonly`](#-bundle--exec--refreshonly)
+* [`timeout`](#-bundle--exec--timeout)
+* [`user`](#-bundle--exec--user)
+* [`environment`](#-bundle--exec--environment)
+
+##### <a name="-bundle--exec--command"></a>`command`
 
 Data type: `Optional[String]`
 
 The command to run
 
-Default value: ``undef``
+Default value: `undef`
 
-##### `cwd`
+##### <a name="-bundle--exec--cwd"></a>`cwd`
 
 Data type: `Optional[String]`
 
 Working directory to run the command from
 
-Default value: ``undef``
+Default value: `undef`
 
-##### `group`
+##### <a name="-bundle--exec--group"></a>`group`
 
 Data type: `String`
 
@@ -69,15 +80,15 @@ Group to run the command as
 
 Default value: `'root'`
 
-##### `refreshonly`
+##### <a name="-bundle--exec--refreshonly"></a>`refreshonly`
 
 Data type: `Boolean`
 
 Only run the command if the resource is signaled
 
-Default value: ``false``
+Default value: `false`
 
-##### `timeout`
+##### <a name="-bundle--exec--timeout"></a>`timeout`
 
 Data type: `Integer`
 
@@ -85,7 +96,7 @@ Timeout for command execution
 
 Default value: `300`
 
-##### `user`
+##### <a name="-bundle--exec--user"></a>`user`
 
 Data type: `String`
 
@@ -93,7 +104,7 @@ User to run the command as
 
 Default value: `'root'`
 
-##### `environment`
+##### <a name="-bundle--exec--environment"></a>`environment`
 
 Data type: `Array[String]`
 
@@ -101,23 +112,32 @@ Environment variables to set before running the command
 
 Default value: `[]`
 
-### `bundle::install`
+### <a name="bundle--install"></a>`bundle::install`
 
 Install a bundle
 
 #### Parameters
 
-The following parameters are available in the `bundle::install` defined type.
+The following parameters are available in the `bundle::install` defined type:
 
-##### `deployment`
+* [`deployment`](#-bundle--install--deployment)
+* [`environment`](#-bundle--install--environment)
+* [`group`](#-bundle--install--group)
+* [`path`](#-bundle--install--path)
+* [`user`](#-bundle--install--user)
+* [`with`](#-bundle--install--with)
+* [`without`](#-bundle--install--without)
+* [`timeout`](#-bundle--install--timeout)
+
+##### <a name="-bundle--install--deployment"></a>`deployment`
 
 Data type: `Boolean`
 
 Install the bundle in deployment mode
 
-Default value: ``true``
+Default value: `true`
 
-##### `environment`
+##### <a name="-bundle--install--environment"></a>`environment`
 
 Data type: `Array[String]`
 
@@ -125,7 +145,7 @@ Environment to bundle the application with with
 
 Default value: `[]`
 
-##### `group`
+##### <a name="-bundle--install--group"></a>`group`
 
 Data type: `String`
 
@@ -133,15 +153,15 @@ Group to bundle the application with
 
 Default value: `'root'`
 
-##### `path`
+##### <a name="-bundle--install--path"></a>`path`
 
 Data type: `Optional[String]`
 
 Custom path to bundle the application
 
-Default value: ``undef``
+Default value: `undef`
 
-##### `user`
+##### <a name="-bundle--install--user"></a>`user`
 
 Data type: `String`
 
@@ -149,7 +169,7 @@ User to bundle the application with
 
 Default value: `'root'`
 
-##### `with`
+##### <a name="-bundle--install--with"></a>`with`
 
 Data type: `Array[String]`
 
@@ -157,7 +177,7 @@ Pass --with when bundling the application
 
 Default value: `[]`
 
-##### `without`
+##### <a name="-bundle--install--without"></a>`without`
 
 Data type: `Array[String]`
 
@@ -165,7 +185,7 @@ Pass --without when bundling the application
 
 Default value: `[]`
 
-##### `timeout`
+##### <a name="-bundle--install--timeout"></a>`timeout`
 
 Data type: `Integer`
 
