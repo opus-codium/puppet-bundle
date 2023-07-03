@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'bundle::install' do
@@ -29,7 +31,7 @@ describe 'bundle::install' do
           is_expected.to contain_exec('deploy@foo /path/to/bundle% /usr/bin/bundle install --deployment --with single --without one two three').with(
             command: '/usr/bin/bundle install --deployment --with single --without one two three',
             environment: [],
-            user: 'deploy',
+            user: 'deploy'
           )
         end
 
@@ -38,7 +40,7 @@ describe 'bundle::install' do
 
           it do
             is_expected.to contain_exec('deploy@foo /path/to/bundle% /usr/bin/bundle install --deployment --with single --without one two three').with(
-              environment: ['BUNDLER_GEMFILE=Gemfile.aarch64'],
+              environment: ['BUNDLER_GEMFILE=Gemfile.aarch64']
             )
           end
         end
@@ -49,7 +51,7 @@ describe 'bundle::install' do
           it do
             is_expected.to contain_exec('deploy@foo /path/to/bundle% /usr/bin/bundle install --deployment --path vendor/bundle --with single --without one two three').with(
               command: '/usr/bin/bundle install --deployment --path vendor/bundle --with single --without one two three',
-              user: 'deploy',
+              user: 'deploy'
             )
           end
         end
