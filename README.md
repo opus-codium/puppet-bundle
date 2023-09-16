@@ -1,7 +1,7 @@
 # bundle
 
 <!-- header GFM -->
-[![Build Status](https://img.shields.io/github/workflow/status/opus-codium/puppet-bundle/Release)](https://github.com/opus-codium/puppet-bundle/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/opus-codium/puppet-bundle/release.yml)](https://github.com/opus-codium/puppet-bundle/releases)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
 [![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
 [![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/opuscodium/bundle.svg)](https://forge.puppetlabs.com/opuscodium/bundle)
