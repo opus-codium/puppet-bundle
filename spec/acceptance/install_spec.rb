@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper_acceptance'
 
 describe 'bundle class' do
   it 'works idempotently with no errors' do
     options[:forge_host] = 'https://forge.puppet.com'
-    puppet_module_install(module_name: 'puppetlabs-vcsrepo')
+    shell('puppet module install puppetlabs-vcsrepo')
 
     pp = <<~MANIFEST
       package { 'build-essential':
