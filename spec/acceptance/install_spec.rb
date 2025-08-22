@@ -39,6 +39,7 @@ describe 'bundle class' do
         path       => "${bundle_directory}/vendor",
         without    => [
           "development",
+          "documentation",
         ],
         user       => 'deploy',
         require    => [
